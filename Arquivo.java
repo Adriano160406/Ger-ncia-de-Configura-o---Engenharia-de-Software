@@ -12,7 +12,7 @@ public class SistemaRPG {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("===================================");
-        System.out.println("      ⚔️  SISTEMA RPG JAVA ⚔️");
+        System.out.println("⚔️ SISTEMA RPG JAVA ULTRA ⚔️");
         System.out.println("===================================");
 
         System.out.print("Digite o nome do herói: ");
@@ -25,7 +25,8 @@ public class SistemaRPG {
             System.out.println("1 - Ver status");
             System.out.println("2 - Explorar floresta");
             System.out.println("3 - Loja");
-            System.out.println("4 - Sair");
+            System.out.println("4 - Usar cura");
+            System.out.println("5 - Sair");
             System.out.print("Escolha: ");
             opcao = sc.nextInt();
 
@@ -44,6 +45,10 @@ public class SistemaRPG {
                     break;
 
                 case 4:
+                    cura();
+                    break;
+
+                case 5:
                     System.out.println("\nSaindo do jogo...");
                     break;
 
@@ -51,7 +56,7 @@ public class SistemaRPG {
                     System.out.println("Opção inválida!");
             }
 
-        } while (opcao != 4);
+        } while (opcao != 5);
 
         sc.close();
     }
@@ -132,5 +137,14 @@ public class SistemaRPG {
             default:
                 System.out.println("Item inválido!");
         }
+    }
+
+    public static void cura() {
+
+        vida += 20;
+
+        System.out.println("\n✨ Você usou uma magia de cura!");
+        System.out.println("❤️ Vida recuperada!");
+        System.out.println("Vida atual: " + vida);
     }
 }
